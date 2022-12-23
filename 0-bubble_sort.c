@@ -11,6 +11,10 @@ void	bubble_sort(int *array, size_t size)
 	uint64_t	s;
 	int		v;
 
+	if (array == 0)
+		return;
+	if (size < 2)
+		return;
 	while (1)
 	{
 		s = 0;
