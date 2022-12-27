@@ -3,18 +3,17 @@
 /**
  * insertion_sort_list - function
  * @list: list to sort
- *
  */
-
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *head, *tmp;
+	listint_t	*head;
+	listint_t	*tmp;
 
-	if (!list || !*list)
+	if (!list)
 		return;
-
+	if (!*list)
+		return;
 	head = *list;
-
 	while (head)
 	{
 		while (head->next && (head->n > head->next->n))
@@ -40,5 +39,5 @@ void insertion_sort_list(listint_t **list)
 		}
 		head = head->next;
 	}
-
 }
+
