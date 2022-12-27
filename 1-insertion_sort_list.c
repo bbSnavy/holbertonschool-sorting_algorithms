@@ -2,7 +2,7 @@
 
 /**
  * insertion_sort_list - function
- * list - list to sort
+ * @list: list to sort
  *
  */
 
@@ -22,12 +22,12 @@ void insertion_sort_list(listint_t **list)
 			tmp = head->next;
 			head->next = tmp->next;
 			tmp->prev = head->prev;
-			
+
 			if (head->prev)
 				head->prev->next = tmp;
 			if (tmp->next)
 				tmp->next->prev = head;
-			
+
 			head->prev = tmp;
 			tmp->next = head;
 
