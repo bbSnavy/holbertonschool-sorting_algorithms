@@ -10,7 +10,7 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *head, *tmp;
 
-	if (!list)
+	if (!list || !*list)
 		return;
 
 	head = *list;
