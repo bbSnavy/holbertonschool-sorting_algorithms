@@ -2,30 +2,31 @@
 
 /**
  * selection_sort - function
- * @array: array to sort
- * @size: array size
+ * @array: []int, array to sort
+ * @size: size_t, array size
  */
-
-void selection_sort(int *array, size_t size)
+void	selection_sort(int *array, size_t size)
 {
-	int temp;
-	size_t i, j, min;
+	size_t	x;
+	size_t	y;
+	size_t	m;
+	int	t;
 
-	for (i = 0; i < size; i++)
+	if (array == 0)
+		return;
+	if (size < 2)
+		return;
+	for (x = 0; x < size; x++)
 	{
-		min = i;
-		for (j = i + 1; j < size; j++)
+		m = x;
+		for (y = x + 1; y < size; y++)
+			if (array[y] < array[m])
+				m = y;
+		if (m != x)
 		{
-			if (array[j] < array[min])
-			{
-				min = j;
-			}
-		}
-		if (min != i)
-		{
-			temp = array[min];
-			array[min] = array[i];
-			array[i] = temp;
+			t = array[m];
+			array[m] = array[x];
+			array[x] = t;
 			print_array(array, size);
 		}
 	}
